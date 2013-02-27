@@ -1,5 +1,5 @@
 {
-	"name": "silverstripe/newsletter_emogrify",
+	"name": "sunnysideup/newsletter_emogrify",
 	"type": "silverstripe-module",
 	"description": "create nicely formatted emails for the silverstripe newsletter module using the emogrifier technique.",
 	"homepage": "http://www.silverstripe-webdevelopment.com",
