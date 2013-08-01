@@ -33,6 +33,7 @@ UPDATES
                 Added several new pseudo-selectors (first-child, last-child, nth-child, and nth-of-type).
     2012-02-07  Fixed some recent code introductions to use class constants rather than global constants.
                 Fixed some recent code introductions to make it cleaner to read.
+    2012-05-01  Made removal of invisible nodes operate in a case-insensitive manner... Thanks Juha P.!
 */
 
 define('CACHE_CSS', 0);
@@ -195,26 +196,25 @@ class Emogrifier {
         foreach ($this->caches[CACHE_CSS][$csskey] as $value) {
 
             // query the body for the xpath selector
-            $nodes = @$xpath->query($this->translateCSStoXpath(trim($value['selector'])));
-						if($nodes) {
-							foreach($nodes as $node) {
-									// if it has a style attribute, get it, process it, and append (overwrite) new stuff
-									if ($node->hasAttribute('style')) {
-											// break it up into an associative array
-											$oldStyleArr = $this->cssStyleDefinitionToArray($node->getAttribute('style'));
-											$newStyleArr = $this->cssStyleDefinitionToArray($value['attributes']);
+            $nodes = $xpath->query($this->translateCSStoXpath(trim($value['selector'])));
 
-											// new styles overwrite the old styles (not technically accurate, but close enough)
-											$combinedArr = array_merge($oldStyleArr,$newStyleArr);
-											$style = '';
-											foreach ($combinedArr as $k => $v) $style .= (strtolower($k) . ':' . $v . ';');
-									} else {
-											// otherwise create a new style
-											$style = trim($value['attributes']);
-									}
-									$node->setAttribute('style', $style);
-							}
-						}
+            foreach($nodes as $node) {
+                // if it has a style attribute, get it, process it, and append (overwrite) new stuff
+                if ($node->hasAttribute('style')) {
+                    // break it up into an associative array
+                    $oldStyleArr = $this->cssStyleDefinitionToArray($node->getAttribute('style'));
+                    $newStyleArr = $this->cssStyleDefinitionToArray($value['attributes']);
+
+                    // new styles overwrite the old styles (not technically accurate, but close enough)
+                    $combinedArr = array_merge($oldStyleArr,$newStyleArr);
+                    $style = '';
+                    foreach ($combinedArr as $k => $v) $style .= (strtolower($k) . ':' . $v . ';');
+                } else {
+                    // otherwise create a new style
+                    $style = trim($value['attributes']);
+                }
+                $node->setAttribute('style', $style);
+            }
         }
 
         // now iterate through the nodes that contained inline styles in the original HTML
@@ -229,11 +229,17 @@ class Emogrifier {
             $node->setAttribute('style', $style);
         }
 
-        // This removes styles from your email that contain display:none. You could comment these out if you want.
-        $nodes = $xpath->query('//*[contains(translate(@style," ",""),"display:none")]');
-        // the checks on parentNode and is_callable below are there to ensure that if we've deleted the parent node,
+        // This removes styles from your email that contain display:none.
+        // We need to look for display:none, but we need to do a case-insensitive search. Since DOMDocument only supports XPath 1.0,
+        // lower-case() isn't available to us. We've thus far only set attributes to lowercase, not attribute values. Consequently, we need
+        // to translate() the letters that would be in 'NONE' ("NOE") to lowercase.
+        $nodes = $xpath->query('//*[contains(translate(translate(@style," ",""),"NOE","noe"),"display:none")]');
+        // The checks on parentNode and is_callable below ensure that if we've deleted the parent node,
         // we don't try to call removeChild on a nonexistent child node
-        if ($nodes->length > 0) foreach ($nodes as $node) if ($node->parentNode && is_callable(array($node->parentNode,'removeChild'))) $node->parentNode->removeChild($node);
+        if ($nodes->length > 0)
+            foreach ($nodes as $node)
+                if ($node->parentNode && is_callable(array($node->parentNode,'removeChild')))
+                        $node->parentNode->removeChild($node);
 
         if ($this->preserveEncoding) {
             return mb_convert_encoding($xmldoc->saveHTML(), $encoding, 'HTML-ENTITIES');
