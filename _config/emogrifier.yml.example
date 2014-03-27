@@ -1,0 +1,10 @@
+EmogrifierMailer:
+  css_file: "/themes/mytheme/css/emailTypography.css"
+
+NewsletterAdmin:
+  template_paths:
+    - themes/mytheme/templates/Email
+
+SubscriptionPage:
+  icon: "mysite/images/treeicons/SubscriptionPage"
+
