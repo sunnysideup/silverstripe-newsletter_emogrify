@@ -1,6 +1,9 @@
 ###############################################
-newsletter_emogrify -  Creates nicely formatted emails for the silverstripe newsletter module using the emogrifier technique.
+newsletter_emogrify -
 ###############################################
+
+Creates nicely formatted emails for the silverstripe newsletter module
+using the emogrifier technique.
 
 Developer
 -----------------------------------------------
@@ -8,7 +11,6 @@ Nicolaas Francken [at] sunnysideup.co.nz
 
 Requirements
 -----------------------------------------------
-
 see composer.json
 
 Installation Instructions
