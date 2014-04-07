@@ -1,6 +1,4 @@
-###############################################
-newsletter emogrify
-###############################################
+newsletter emogrify================================================================================
 
 Creates nicely formatted emails for the silverstripe newsletter module
 using the emogrifier technique.
