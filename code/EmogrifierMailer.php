@@ -10,7 +10,7 @@ class EmogrifierMailer extends Mailer {
 		$cssFileHandler = fopen($cssFileLocation, 'r');
 		$css = fread($cssFileHandler,  filesize($cssFileLocation));
 		fclose($cssFileHandler);
-		$emog = new Emogrifier($htmlContent, $css);
+		$emog = new \Pelago\Emogrifier($htmlContent, $css);
 		$htmlContent = $emog->emogrify();
 		return parent::sendHTML($to, $from, $subject, $htmlContent, $attachedFiles, $customheaders, $plainContent);
 	}
