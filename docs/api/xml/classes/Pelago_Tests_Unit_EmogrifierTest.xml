@@ -1,0 +1,427 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<class xmlns="http://xml.phpdox.net/src" full="Pelago\Tests\Unit\EmogrifierTest" namespace="Pelago\Tests\Unit" name="EmogrifierTest" abstract="false" final="false" start="11" end="1026">
+  <file path="/var/www/_modules/newsletter_emogrify/trunk/docs/en/phpdox/../../../thirdparty/source/Tests/Unit" file="EmogrifierTest.php" realpath="/var/www/_modules/newsletter_emogrify/trunk/thirdparty/source/Tests/Unit/EmogrifierTest.php" size="33747" time="2015-03-14T10:38:37+13:00" unixtime="1426282717" sha1="bfb29bfb0ac6646998db2bc1e7baf2bdbf6c9fb5" relative="thirdparty/source/Tests/Unit/EmogrifierTest.php"/>
+  <docblock>
+    <description compact="Test case."/>
+    <author value="Oliver Klee &lt;typo3-coding@oliverklee.de&gt;"/>
+  </docblock>
+  <extends full="PHPUnit_Framework_TestCase" namespace="" name="PHPUnit_Framework_TestCase"/>
+  <constant name="LF" value="&quot;\n&quot;">
+    <docblock>
+      <description/>
+      <var type="string"/>
+    </docblock>
+  </constant>
+  <member name="html4TransitionalDocumentType" type="string" default="''" visibility="private" line="21">
+    <docblock>
+      <description/>
+      <var type="string"/>
+    </docblock>
+  </member>
+  <member name="xhtml1StrictDocumentType" type="string" default="''" visibility="private" line="26">
+    <docblock>
+      <description/>
+      <var type="string"/>
+    </docblock>
+  </member>
+  <member name="html5DocumentType" type="string" default="'&lt;!DOCTYPE html&gt;'" visibility="private" line="31">
+    <docblock>
+      <description/>
+      <var type="string"/>
+    </docblock>
+  </member>
+  <member name="subject" type="{unknown}" default="null" visibility="private" line="36">
+    <docblock>
+      <description/>
+      <var type="object">
+        <type full="Pelago\Emogrifier" namespace="Pelago" name="Emogrifier"/>
+      </var>
+    </docblock>
+  </member>
+  <method name="setUp" start="43" end="51" abstract="false" final="false" static="false" visibility="protected">
+    <docblock>
+      <description compact="Sets up the test case."/>
+      <return type="object">
+        <type full="Pelago\Tests\Unit\void" namespace="Pelago\Tests\Unit" name="void"/>
+      </return>
+    </docblock>
+  </method>
+  <method name="emogrifyForNoDataSetReturnsThrowsException" start="58" end="61" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description/>
+      <test/>
+      <expectedexception value="\BadMethodCallException"/>
+    </docblock>
+  </method>
+  <method name="emogrifyForEmptyHtmlAndEmptyCssThrowsException" start="68" end="74" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description/>
+      <test/>
+      <expectedexception value="\BadMethodCallException"/>
+    </docblock>
+  </method>
+  <method name="emogrifyByDefaultEncodesUmlautsAsHtmlEntities" start="79" end="88" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description/>
+      <test/>
+    </docblock>
+  </method>
+  <method name="emogrifyCanKeepEncodedUmlauts" start="93" end="105" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description/>
+      <test/>
+    </docblock>
+  </method>
+  <method name="emogrifyForHtmlTagOnlyAndEmptyCssReturnsHtmlTagWithHtml4DocumentType" start="110" end="120" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description/>
+      <test/>
+    </docblock>
+  </method>
+  <method name="emogrifyForHtmlTagWithXhtml1StrictDocumentTypeKeepsDocumentType" start="125" end="135" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description/>
+      <test/>
+    </docblock>
+  </method>
+  <method name="emogrifyForHtmlTagWithXhtml5DocumentTypeKeepsDocumentType" start="140" end="150" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description/>
+      <test/>
+    </docblock>
+  </method>
+  <method name="emogrifyByDefaultRemovesWbrTag" start="155" end="164" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description/>
+      <test/>
+    </docblock>
+  </method>
+  <method name="addUnprocessableTagCausesTagToBeRemoved" start="169" end="180" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description/>
+      <test/>
+    </docblock>
+  </method>
+  <method name="addUnprocessableTagNotRemovesTagWithContent" start="185" end="196" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description/>
+      <test/>
+    </docblock>
+  </method>
+  <method name="removeUnprocessableHtmlTagCausesTagToStayAgain" start="201" end="213" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description/>
+      <test/>
+    </docblock>
+  </method>
+  <method name="emogrifyCanAddMatchingElementRuleOnHtmlElementFromCss" start="218" end="229" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description/>
+      <test/>
+    </docblock>
+  </method>
+  <method name="emogrifyNotAddsNotMatchingElementRuleOnHtmlElementFromCss" start="234" end="244" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description/>
+      <test/>
+    </docblock>
+  </method>
+  <method name="emogrifyCanMatchTwoElements" start="249" end="260" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description/>
+      <test/>
+    </docblock>
+  </method>
+  <method name="emogrifyCanAssignTwoStyleRulesFromSameMatcherToElement" start="265" end="277" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description/>
+      <test/>
+    </docblock>
+  </method>
+  <method name="emogrifyCanMatchAttributeOnlySelector" start="282" end="292" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description/>
+      <test/>
+    </docblock>
+  </method>
+  <method name="emogrifyCanAssignStyleRulesFromTwoIdenticalMatchersToElement" start="297" end="309" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description/>
+      <test/>
+    </docblock>
+  </method>
+  <method name="emogrifyCanAssignStyleRulesFromTwoDifferentMatchersToElement" start="314" end="326" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description/>
+      <test/>
+    </docblock>
+  </method>
+  <method name="selectorDataProvider" start="333" end="381" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Data provide for selectors."/>
+      <return type="array" of="object">
+        <type full="Pelago\Tests\Unit\array" namespace="Pelago\Tests\Unit" name="array"/>
+      </return>
+    </docblock>
+  </method>
+  <method name="emogrifierMatchesSelectors" start="391" end="409" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description/>
+      <test/>
+      <param description="the complete CSS" type="string" variable="$css"/>
+      <param description="regular expression for the the HTML that needs to be contained in the merged HTML" type="string" variable="$containedHtml"/>
+      <dataprovider value="selectorDataProvider"/>
+    </docblock>
+    <parameter name="css" byreference="false" type="{unknown}"/>
+    <parameter name="containedHtml" byreference="false" type="{unknown}"/>
+  </method>
+  <method name="cssDeclarationWhitespaceDroppingDataProvider" start="416" end="428" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Data provider for emogrifyDropsWhitespaceFromCssDeclarations."/>
+      <return type="array" of="object">
+        <type full="Pelago\Tests\Unit\array" namespace="Pelago\Tests\Unit" name="array"/>
+      </return>
+    </docblock>
+  </method>
+  <method name="emogrifyDropsLeadingAndTrailingWhitespaceFromCssDeclarations" start="438" end="452" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description/>
+      <test/>
+      <param description="the CSS declaration block (without the curly braces)" type="string" variable="$cssDeclarationBlock"/>
+      <param description="the expected value of the style attribute" type="string" variable="$expectedStyleAttributeContent"/>
+      <dataprovider value="cssDeclarationWhitespaceDroppingDataProvider"/>
+    </docblock>
+    <parameter name="cssDeclarationBlock" byreference="false" type="{unknown}"/>
+    <parameter name="expectedStyleAttributeContent" byreference="false" type="{unknown}"/>
+  </method>
+  <method name="formattedCssDeclarationDataProvider" start="459" end="472" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Data provider for emogrifyFormatsCssDeclarations."/>
+      <return type="array" of="object">
+        <type full="Pelago\Tests\Unit\array" namespace="Pelago\Tests\Unit" name="array"/>
+      </return>
+    </docblock>
+  </method>
+  <method name="emogrifyFormatsCssDeclarations" start="482" end="494" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description/>
+      <test/>
+      <param description="the CSS declaration block (without the curly braces)" type="string" variable="$cssDeclarationBlock"/>
+      <param description="the expected value of the style attribute" type="string" variable="$expectedStyleAttributeContent"/>
+      <dataprovider value="formattedCssDeclarationDataProvider"/>
+    </docblock>
+    <parameter name="cssDeclarationBlock" byreference="false" type="{unknown}"/>
+    <parameter name="expectedStyleAttributeContent" byreference="false" type="{unknown}"/>
+  </method>
+  <method name="emogrifyKeepsExistingStyleAttributes" start="499" end="509" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description/>
+      <test/>
+    </docblock>
+  </method>
+  <method name="emogrifyAddsCssAfterExistingStyle" start="514" end="528" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description/>
+      <test/>
+    </docblock>
+  </method>
+  <method name="emogrifyCanMatchMinifiedCss" start="533" end="543" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description/>
+      <test/>
+    </docblock>
+  </method>
+  <method name="emogrifyLowercasesAttributeNamesFromStyleAttributes" start="548" end="557" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description/>
+      <test/>
+    </docblock>
+  </method>
+  <method name="emogrifyLowerCasesAttributeNames" start="562" end="574" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description/>
+      <test/>
+    </docblock>
+  </method>
+  <method name="emogrifyPreservesCaseForAttributeValuesFromPassedInCss" start="579" end="590" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description/>
+      <test/>
+    </docblock>
+  </method>
+  <method name="emogrifyPreservesCaseForAttributeValuesFromParsedStyleBlock" start="595" end="606" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description/>
+      <test/>
+    </docblock>
+  </method>
+  <method name="emogrifyRemovesStyleNodes" start="611" end="620" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description/>
+      <test/>
+    </docblock>
+  </method>
+  <method name="unneededCssThingsDataProvider" start="627" end="643" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Data provider for things that should be left out when applying the CSS."/>
+      <return type="array" of="object">
+        <type full="Pelago\Tests\Unit\array" namespace="Pelago\Tests\Unit" name="array"/>
+      </return>
+    </docblock>
+  </method>
+  <method name="emogrifyFiltersUnneededCssThings" start="653" end="663" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description/>
+      <test/>
+      <param type="string" variable="$css"/>
+      <param type="string" variable="$markerNotExpectedInHtml"/>
+      <dataprovider value="unneededCssThingsDataProvider"/>
+    </docblock>
+    <parameter name="css" byreference="false" type="{unknown}"/>
+    <parameter name="markerNotExpectedInHtml" byreference="false" type="{unknown}"/>
+  </method>
+  <method name="mediaRulesDataProvider" start="670" end="679" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Data provider for media rules."/>
+      <return type="array" of="object">
+        <type full="Pelago\Tests\Unit\array" namespace="Pelago\Tests\Unit" name="array"/>
+      </return>
+    </docblock>
+  </method>
+  <method name="emogrifyKeepsMediaRules" start="688" end="698" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description/>
+      <test/>
+      <param type="string" variable="$css"/>
+      <dataprovider value="mediaRulesDataProvider"/>
+    </docblock>
+    <parameter name="css" byreference="false" type="{unknown}"/>
+  </method>
+  <method name="emogrifyAddsMissingHeadElement" start="703" end="713" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description/>
+      <test/>
+    </docblock>
+  </method>
+  <method name="emogrifyKeepExistingHeadElementContent" start="718" end="728" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description/>
+      <test/>
+    </docblock>
+  </method>
+  <method name="emogrifyKeepExistingHeadElementAddStyleElement" start="733" end="743" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description/>
+      <test/>
+    </docblock>
+  </method>
+  <method name="validMediaPreserveDataProvider" start="750" end="784" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Valid media query which need to be preserved"/>
+      <return type="array" of="object">
+        <type full="Pelago\Tests\Unit\array" namespace="Pelago\Tests\Unit" name="array"/>
+      </return>
+    </docblock>
+  </method>
+  <method name="emogrifyWithValidMediaQueryContainsInnerCss" start="793" end="803" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description/>
+      <test/>
+      <param type="string" variable="$css"/>
+      <dataprovider value="validMediaPreserveDataProvider"/>
+    </docblock>
+    <parameter name="css" byreference="false" type="{unknown}"/>
+  </method>
+  <method name="emogrifyForHtmlWithValidMediaQueryContainsInnerCss" start="812" end="822" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description/>
+      <test/>
+      <param type="string" variable="$css"/>
+      <dataprovider value="validMediaPreserveDataProvider"/>
+    </docblock>
+    <parameter name="css" byreference="false" type="{unknown}"/>
+  </method>
+  <method name="emogrifyWithValidMediaQueryNotContainsInlineCss" start="831" end="841" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description/>
+      <test/>
+      <param type="string" variable="$css"/>
+      <dataprovider value="validMediaPreserveDataProvider"/>
+    </docblock>
+    <parameter name="css" byreference="false" type="{unknown}"/>
+  </method>
+  <method name="invalidMediaPreserveDataProvider" start="848" end="860" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Invalid media query which need to be strip"/>
+      <return type="array" of="object">
+        <type full="Pelago\Tests\Unit\array" namespace="Pelago\Tests\Unit" name="array"/>
+      </return>
+    </docblock>
+  </method>
+  <method name="emogrifyWithInvalidMediaQueryaNotContainsInnerCss" start="869" end="879" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description/>
+      <test/>
+      <param type="string" variable="$css"/>
+      <dataprovider value="invalidMediaPreserveDataProvider"/>
+    </docblock>
+    <parameter name="css" byreference="false" type="{unknown}"/>
+  </method>
+  <method name="emogrifyWithInValidMediaQueryNotContainsInlineCss" start="888" end="898" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description/>
+      <test/>
+      <param type="string" variable="$css"/>
+      <dataprovider value="invalidMediaPreserveDataProvider"/>
+    </docblock>
+    <parameter name="css" byreference="false" type="{unknown}"/>
+  </method>
+  <method name="emogrifyFromHtmlWithInValidMediaQueryNotContainsInnerCss" start="907" end="917" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description/>
+      <test/>
+      <param type="string" variable="$css"/>
+      <dataprovider value="invalidMediaPreserveDataProvider"/>
+    </docblock>
+    <parameter name="css" byreference="false" type="{unknown}"/>
+  </method>
+  <method name="emogrifyFromHtmlWithInValidMediaQueryNotContainsInlineCss" start="926" end="936" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description/>
+      <test/>
+      <param type="string" variable="$css"/>
+      <dataprovider value="invalidMediaPreserveDataProvider"/>
+    </docblock>
+    <parameter name="css" byreference="false" type="{unknown}"/>
+  </method>
+  <method name="emogrifyAppliesCssFromStyleNodes" start="941" end="952" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description/>
+      <test/>
+    </docblock>
+  </method>
+  <method name="emogrifyAppliesCssWithUpperCaseSelector" start="957" end="968" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description/>
+      <test/>
+    </docblock>
+  </method>
+  <method name="emogrifyAppliesCssWithMixedCaseAttributesInStyleBlock" start="974" end="986" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Emogrify was handling case differently for passed in CSS vs CSS parsed from style blocks."/>
+      <test/>
+    </docblock>
+  </method>
+  <method name="emogrifyMergesCssWithMixedCaseAttribute" start="992" end="1006" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Passed in CSS sets the order, but style block CSS overrides values."/>
+      <test/>
+    </docblock>
+  </method>
+  <method name="emogrifyMergesCssWithMixedUnits" start="1011" end="1025" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description/>
+      <test/>
+    </docblock>
+  </method>
+</class>

@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<source xmlns="http://xml.phpdox.net/src">
+  <dir name="/var/www/_modules/newsletter_emogrify/trunk">
+    <file name="_config.php" size="244" time="2015-03-14T10:22:29+13:00" unixtime="1426281749" sha1="a974802498b0b98ee58c720e5b9a3c05f2e7bf48" xml="tokens/_config.php.xml"/>
+    <dir name="code">
+      <file name="EmogrifierMailer.php" size="853" time="2015-03-14T10:22:29+13:00" unixtime="1426281749" sha1="36ea67b883122c208d685f05ad6bffb838761d73" xml="tokens/code/EmogrifierMailer.php.xml"/>
+    </dir>
+    <dir name="thirdparty">
+      <file name="Emogrifier.php" size="26947" time="2015-03-14T10:22:29+13:00" unixtime="1426281749" sha1="1b9f19845219b93eb73df18203c712357a7f6a2c" xml="tokens/thirdparty/Emogrifier.php.xml"/>
+      <dir name="source">
+        <dir name="Classes">
+          <file name="Emogrifier.php" size="29026" time="2015-03-14T10:38:37+13:00" unixtime="1426282717" sha1="d1474b74ee25c89a8040bf5d45230d07f2c5b892" xml="tokens/thirdparty/source/Classes/Emogrifier.php.xml"/>
+        </dir>
+        <dir name="Tests">
+          <dir name="Unit">
+            <file name="EmogrifierTest.php" size="33747" time="2015-03-14T10:38:37+13:00" unixtime="1426282717" sha1="bfb29bfb0ac6646998db2bc1e7baf2bdbf6c9fb5" xml="tokens/thirdparty/source/Tests/Unit/EmogrifierTest.php.xml"/>
+          </dir>
+        </dir>
+      </dir>
+    </dir>
+  </dir>
+</source>
