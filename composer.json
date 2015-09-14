@@ -3,7 +3,7 @@
 	"type": "silverstripe-module",
 	"description": "create nicely formatted emails for the silverstripe newsletter module using the emogrifier technique.",
 	"homepage": "http://www.silverstripe-webdevelopment.com",
-	"keywords": ["newsletter_emogrify", "silverstripe"],
+	"keywords": ["newsletter_emogrify", "silverstripe", "newletter", "css", "emogrify"],
 	"license": "Sunny Side Up (BSD-3-Clause and CUSTOM)",
 	"authors":[
 		{
