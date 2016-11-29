@@ -3,8 +3,10 @@
     "type": "silverstripe-module",
     "description": "create nicely formatted emails for the silverstripe newsletter module using the emogrifier technique.",
     "keywords": [
+        "Silverstripe-CMS",
+        "CMS",
+        "Silverstripe",
         "newsletter_emogrify",
-        "silverstripe",
         "newletter",
         "css",
         "emogrify"
